@@ -66,11 +66,11 @@ docker-compose up --build
 
 ### Accède à l'app :
 
-** Frontend : ** http://localhost:5173
+**Frontend :** http://localhost:5173
 
-** Backend API : ** http://localhost:8000/docs
+**Backend API :** http://localhost:8000/docs
 
-** Admin DB (pgAdmin) : ** http://localhost:5050
+**Admin DB (pgAdmin) :** http://localhost:5050
 
 ### 🙌 Auteurs
 Développé par Celio Narduzzi – avec ❤️ et React.
