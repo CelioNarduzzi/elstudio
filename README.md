@@ -56,7 +56,7 @@
 
 ```bash
 # Cloner le projet
-git clone https://github.com/ton-utilisateur/elstudio.git
+git clone https://github.com/CelioNarduzzi/elstudio.git
 cd elstudio
 
 # Lancer les services (API, Frontend, DB)
