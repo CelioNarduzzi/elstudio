@@ -16,6 +16,8 @@ import Employee from "./pages/dashboard/Employee"
 import EditUser from "./pages/users/EditUser"
 import InactiveUsers from "./pages/users/InactiveUsers"
 
+import RoleManagement from "./pages/roles/RoleManagement"
+
 // 🧩 Composants
 import PrivateRoute from "./components/PrivateRoute"
 import Header from "./components/Header"
@@ -126,7 +128,8 @@ function App() {
               </Header>
             </PrivateRoute>
           )
-        } />
+        } 
+        />
 
         <Route path="/inactive-users" element={
           roles.includes("super_admin") ? (
@@ -143,7 +146,26 @@ function App() {
             </PrivateRoute>
           )
         } />
-
+        <Route
+          path="/manage-roles"
+          element={
+            roles.includes("super_admin") ? (
+              <PrivateRoute>
+                <Header>
+                  <RoleManagement />
+                </Header>
+              </PrivateRoute>
+            ) : (
+              <PrivateRoute>
+                <Header>
+                  <div className="p-8 text-center text-red-500 text-lg font-semibold">
+                    🚫 Accès interdit.
+                  </div>
+                </Header>
+              </PrivateRoute>
+            )
+          }
+        />
       </Routes>
     </BrowserRouter>
   )

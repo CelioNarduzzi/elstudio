@@ -63,6 +63,15 @@ function Dashboard() {
   <p className="text-gray-500 dark:text-gray-300 mt-2">Gérer les utilisateurs</p>
 </div>
       )}
+{roles.includes("super_admin") && (
+<div
+  onClick={() => navigate("/manage-roles")}
+  className="cursor-pointer bg-white dark:bg-gray-800 p-6 rounded-xl shadow hover:shadow-lg transition w-full max-w-xs text-center"
+  >
+  <h2 className="text-xl font-semibold text-gray-800 dark:text-white">👥 Rôle</h2>
+  <p className="text-gray-500 dark:text-gray-300 mt-2">Gérer les rôles</p>
+  </div>
+   )}
     </div>
   )
 }
