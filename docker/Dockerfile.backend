@@ -1,0 +1,9 @@
+FROM python:3.11
+
+WORKDIR /app
+
+COPY ./backend /app/backend
+
+RUN pip install fastapi uvicorn[standard] sqlalchemy asyncpg "pydantic<2.0" passlib[bcrypt] python-jose bcrypt==4.0.1 email-validator jinja2 python-jose[cryptography]
+
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
