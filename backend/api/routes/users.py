@@ -10,6 +10,9 @@ from pydantic import BaseModel
 from datetime import datetime, date
 from backend.core.dependencies import has_role, get_current_user
 from typing import List, Optional
+from backend.utils.email import (
+    send_password_changed_email,
+)
 
 # Routeur principal pour la gestion des utilisateurs
 router = APIRouter(prefix="/users")
@@ -126,6 +129,7 @@ async def update_profile(
 
     if data.password:
         current_user.hashed_password = hash_password(data.password)
+        await send_password_changed_email(db, current_user.email, current_user.first_name)
 
     if data.theme:
         current_user.theme = data.theme
@@ -199,6 +203,7 @@ async def update_user(
     # Mise à jour du mot de passe
     if data.password:
         user.hashed_password = hash_password(data.password)
+        await send_password_changed_email(db, user.email, user.first_name)
 
     # Mise à jour des rôles
     if data.roles:
