@@ -1,0 +1,58 @@
+# 🐍 Python (FastAPI backend)
+__pycache__/
+*.py[cod]
+*.env
+*.sqlite3
+.env.*
+instance/
+*.db
+*.log
+
+# SQLAlchemy
+*.db
+*.sqlite3
+
+# VS Code
+.vscode/
+
+# 🐳 Docker
+*.pid
+*.seed
+*.bak
+*.swp
+docker-compose.override.yml
+.env.docker
+
+# 📦 Node (React frontend)
+node_modules/
+build/
+dist/
+*.log
+
+# ⚙️ System files
+.DS_Store
+Thumbs.db
+*.swp
+
+# 📄 Pyright / Pylance
+typings/
+
+# 🧪 Testing
+coverage/
+htmlcov/
+.cache/
+pytest_cache/
+
+# 📦 Python packaging
+*.egg-info/
+.eggs/
+.Python
+pip-wheel-metadata/
+__pypackages__/
+
+# ⚠️ IDEs
+.idea/
+*.iml
+
+# 🚫 Ignore .env files, but not .env.example
+.env
